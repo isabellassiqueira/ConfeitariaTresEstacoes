@@ -1,0 +1,4 @@
+# Ignore node_modules folder
+Backend_Cliente/node_modules/
+# Ignore build output
+DSDA/node_modules/
