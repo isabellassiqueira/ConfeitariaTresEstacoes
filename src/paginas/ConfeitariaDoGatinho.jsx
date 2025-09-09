@@ -60,8 +60,23 @@ const navegar = useNavigate();
             </div>
           </div>
 
-<button className="carousel-btn" onClick={prevSlide}>❮</button>
-<button className="carousel-btn" onClick={nextSlide}>❯</button>
+{/* Botão anterior */}
+<button
+  className="carousel-btn"
+  onClick={prevSlide}
+  style={{ left: '20px', top: '50%', transform: 'translateY(-50%)' }}
+>
+  ❮
+</button>
+
+{/* Botão próximo */}
+<button
+  className="carousel-btn"
+  onClick={nextSlide}
+  style={{ right: '20px', top: '50%', transform: 'translateY(-50%)' }}
+>
+  ❯
+</button>
           
           <div className="carousel-indicators">
             {[0, 1, 2].map((index) => (
@@ -82,7 +97,23 @@ const navegar = useNavigate();
     
         <h2>Mais Vendidos</h2>
         <div className="carousel-wrapper">
-          <button className="carousel-btn" aria-label="Anterior" disabled>◀</button>
+{/* Botão anterior */}
+<button
+  className="carousel-btn"
+  onClick={prevSlide}
+  style={{ left: '20px', top: '50%', transform: 'translateY(-50%)' }}
+>
+  ❮
+</button>
+
+{/* Botão próximo */}
+<button
+  className="carousel-btn"
+  onClick={nextSlide}
+  style={{ right: '20px', top: '50%', transform: 'translateY(-50%)' }}
+>
+  ❯
+</button>
           <div className="carousel-container">
             <div className="product-card">
               <img src="https://via.placeholder.com/200x150" alt="Produto 1" />
@@ -150,7 +181,7 @@ const navegar = useNavigate();
         </div>
             </div>
           </div>
-          <button className="carousel-btn" aria-label="Próximo">▶</button>
+         
         </div>
         
         <section className="menu-section">

@@ -145,7 +145,7 @@ const App = () => {
 
         <div className="nav-docabecalho">
           <nav>
-            <a href="#inicio" className="active">Início</a>
+            <a href="/" className="active">Início</a>
 
             <div className="modern-dropdown">
               <a href="#cardapio">

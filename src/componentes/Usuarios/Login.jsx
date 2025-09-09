@@ -70,7 +70,7 @@ const Login = () => {
 
       
       </div>
-              <p>Caso não tenha a conta, crie <a href="" onClick={cadastrar}>Clique aqui</a></p>
+              <p>Caso não tenha a conta,<a href="" onClick={cadastrar}> clique aqui</a></p>
 
      
     
