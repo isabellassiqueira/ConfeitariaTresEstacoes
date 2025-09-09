@@ -338,26 +338,6 @@ const navegar = useNavigate();
         </div>
       )}
       
-      <footer>
-        <div className="container">
-          <div className="footer-logo">
-            <div className="logo">
-              <div className="logo-img" role="img" aria-label="gatinho">🐱</div>
-              <div className="logo-text" style={{color: 'white'}}>Confeitaria do Gatinho</div>
-            </div>
-          </div>
-          
-          <div className="footer-links">
-            <a href="#inicio">Início</a>
-            <a href="#cardapio">Cardápio</a>
-            <a href="#contato">Contato</a>
-            <a href="#termosdeuso">Termos de Uso</a>
-            <a href="#politicadeprivacidade">Política de Privacidade</a>
-          </div>
-          
-          <p className="copyright">© 2023 Confeitaria do Gatinho. Todos os direitos reservados.</p>
-        </div>
-      </footer>
     </div>
   );
 };
