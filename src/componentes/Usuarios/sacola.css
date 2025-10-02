@@ -1,0 +1,70 @@
+.sacola {
+  position: fixed;
+  top: 0;
+  right: -350px; /* escondida fora da tela */
+  width: 350px;
+  height: 100vh;
+  background: #fff8f0;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 20px;
+  box-sizing: border-box;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.sacola.aberto {
+  right: 0; /* aparece */
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 999;
+}
+
+.item-sacola {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.btn-remover {
+  background-color: #a0522d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+.botao-finalizar {
+  background-color: #d2691e;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.botao-finalizar:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.botao-fechar {
+  background: transparent;
+  border: none;
+  color: #d2691e;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+}

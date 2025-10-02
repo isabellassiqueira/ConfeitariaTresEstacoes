@@ -90,7 +90,7 @@ header {
 }
 
 .logo-img img {
-    width: 300px;
+    width: 150px;
     height: auto;
   
   
@@ -130,7 +130,7 @@ header {
 }
 
 .modern-nav a:hover {
-    background-color: #f3f3f3;
+    background-color: z#f3f3f3;
     transform: translateY(-3px);
 }
 
@@ -167,9 +167,6 @@ header {
 .modern-dropdown-content {
     position: absolute;
     top: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%);
-    background: white;
     border-radius: 16px;
     padding: 20px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);

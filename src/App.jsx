@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import { FiShoppingBag, FiUser  } from 'react-icons/fi';
+import './App.css';
+
 
 import ConfeitariaDoGatinho from "./paginas/ConfeitariaDoGatinho";
 import Login from "./componentes/Usuarios/Login";
-import ListarUsuarios from "./paginas/Usuarios/ListarUsuarios";
-import CadastrarUsuarios from "./paginas/Usuarios/CadastrarUsuarios";
-import EditarUsuarios from "./paginas/Usuarios/EditarUsuarios";
+import ListarUsuarios from "./componentes/Usuarios/ListarUsuarios";
+import CadastrarUsuarios from "./componentes/Usuarios/CadastrarUsuarios";
+import EditarUsuarios from "./componentes/Usuarios/EditarUsuarios";
 import Sacola from "./componentes/Usuarios/sacola";
 import logo from './assets/logo.png';
-import CadastrarUsuario from "./paginas/Usuarios/CadastrarUsuarios";
+import CadastrarUsuario from "./componentes/Usuarios/CadastrarUsuarios";
 
 const PaginaNaoEncontrada = () => (
   <div className="text-center py-5">
@@ -19,53 +21,12 @@ const PaginaNaoEncontrada = () => (
   </div>
 );
 
-const Carrinho = ({ onFechar }) => (
-  <div style={{
-    position: 'fixed',
-    top: '100px',
-    right: '20px',
-    width: '300px',
-    height: '100%',
-    backgroundColor: 'white',
-    border: '1px solid #ccc',
-    boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-    zIndex: 1000,
-    borderRadius: '8px',
-    display: 'flex',
-    flexDirection: 'column',
-  }}>
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      backgroundColor: '#E7D0D0',
-      color: '#9D6155',
-      padding: '25px',
-      fontSize: '30px',
-      fontWeight: 'bold',
-      borderTopLeftRadius: '8px',
-      borderTopRightRadius: '8px',
-    }}>
-      <span>Minha Sacola</span>
-      <button
-        onClick={onFechar}
-        aria-label="Fechar sacola"
-        style={{
-          background: 'transparent',
-          border: 'none',
-          fontSize: '24px',
-          fontWeight: 'bold',
-          cursor: 'pointer',
-          color: '#9D6155',
-          lineHeight: '1',
-        }}
-      >
-        ×
-      </button>
-    </div>
-    <p style={{ padding: '25px' }}>Aqui ficam os itens adicionados.</p>
-  </div>
-);
+const produtos = [
+  { id: 1, nome: "Bolo de Chocolate", preco: 25.0 },
+  { id: 2, nome: "Cupcake de Baunilha", preco: 8.5 },
+  { id: 3, nome: "Torta de Morango", preco: 30.0 },
+  { id: 4, nome: "Brigadeiro Gourmet", preco: 3.5 },
+];
 
 const App = () => {
   const location = useLocation();
@@ -94,7 +55,6 @@ const App = () => {
 
           <div className="logo-container">
             <div className="logo">
-              <svg viewBox="0 0 24 24"></svg>
               <div className="logo-img">
                 <img src={logo} alt="Confeitaria Delícias" />
               </div>
@@ -119,10 +79,9 @@ const App = () => {
               </button>
             </Link>
 
+          <Link to ="/sacola">
             <button
               className="btn-sacola"
-              onClick={toggleCarrinho}
-              aria-label={carrinhoAberto ? "Fechar carrinho" : "Abrir carrinho"}
               style={{
                 borderRadius: '100%',
                 border: '2px solid #9D6155',
@@ -137,8 +96,8 @@ const App = () => {
             >
               <FiShoppingBag size={24} />
             </button>
+          </Link>
 
-            {carrinhoAberto && <Carrinho onFechar={toggleCarrinho} />}
           </div>
         </header>
 
@@ -164,7 +123,7 @@ const App = () => {
             <div className="modern-dropdown">
               <a href="#cardapio">
                 Categorias
-                <span className="dropdown-indicator"></span>
+                <span className="dropdown-indicator">▼</span>
               </a>
               <div className="modern-dropdown-content">
                 <a href="#">Bolos</a>
@@ -181,7 +140,7 @@ const App = () => {
                 <span className="dropdown-indicator">▼</span>
               </a>
               <div className="modern-dropdown-content">
-                <a href="#">Nossa História</a>
+                <a href="#sobre">Nossa História</a>
                 <a href="#">Missão e Valores</a>
                 <a href="#">Equipe</a>
                 <a href="#">Prêmios</a>
@@ -223,7 +182,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/sacola" element={<Sacola />} />
           <Route path="/cadastro" element={<CadastrarUsuario />} />
-          <Route path="/usuarios" element={<ListarUsuarios />} />
+          <Route path="/usuarios/listar" element={<ListarUsuarios />} />
           <Route path="/usuarios/cadastrar" element={<CadastrarUsuarios />} />
           <Route path="/usuarios/editar/:id" element={<EditarUsuarios />} />
           <Route path="*" element={<PaginaNaoEncontrada />} />
